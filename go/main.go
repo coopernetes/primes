@@ -59,5 +59,5 @@ func primes(largestNumber int) {
 		}
 		i += 1
 	}
-	fmt.Printf("\r%d\nCount: %d\n", primes, len(primes))
+	fmt.Printf("\nCount: %d\n", len(primes))
 }
