@@ -1,7 +1,6 @@
 use std::io;
 use std::io::Write;
 use std::time::Instant;
-use rust_decimal::prelude::*;
 
 fn main() {
     let start = Instant::now();
@@ -31,7 +30,7 @@ fn main() {
     let end = start.elapsed();
     println!("\nCount: {}", primes.len());
     println!("Time (ns): {}", end.as_nanos());
-    println!("Time (µs): {}", Decimal::new(end.as_nanos().try_into().unwrap(), 2));
-    println!("Time (ms): {}", Decimal::new(end.as_nanos().try_into().unwrap(), 5));
-    println!("Time (s): {}", Decimal::new(end.as_nanos().try_into().unwrap(), 8));
+    println!("Time (µs): {:.3}", end.as_nanos() as f64 / 1_000.0);
+    println!("Time (ms): {:.3}", end.as_nanos() as f64 / 1_000_000.0);
+    println!("Time (s): {:.3}", end.as_nanos() as f64 / 1_000_000_000.0);
 }
