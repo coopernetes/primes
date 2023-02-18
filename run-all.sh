@@ -16,4 +16,4 @@ echo ""
 echo ""
 echo " === Rust ==="
 echo ""
-(cd rust/primes && cargo run -q)
+(cd rust/primes && cargo build -r && ./target/release/primes)

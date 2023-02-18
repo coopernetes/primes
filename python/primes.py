@@ -27,6 +27,6 @@ if __name__ == "__main__":
     td = end - start
     print(f"Time (ns): {td}")
     print("Time (µs): {0:.3f}".format(td / 1_000))
-    print("Time (ms): {0:.5f}".format(td / 1_000_000))
-    print("Time (s):  {0:.5f}".format(td / 1_000_000_000))
+    print("Time (ms): {0:.3f}".format(td / 1_000_000))
+    print("Time (s):  {0:.4f}".format(td / 1_000_000_000))
 

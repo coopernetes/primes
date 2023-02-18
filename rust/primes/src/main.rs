@@ -32,5 +32,5 @@ fn main() {
     println!("Time (ns): {}", end.as_nanos());
     println!("Time (µs): {:.3}", end.as_nanos() as f64 / 1_000.0);
     println!("Time (ms): {:.3}", end.as_nanos() as f64 / 1_000_000.0);
-    println!("Time (s): {:.3}", end.as_nanos() as f64 / 1_000_000_000.0);
+    println!("Time (s): {:.4}", end.as_nanos() as f64 / 1_000_000_000.0);
 }

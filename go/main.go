@@ -24,8 +24,8 @@ func main() {
 	diffNanos := float64(diff.Nanoseconds())
 	fmt.Printf("Time (ns): %d\n", diff.Nanoseconds())
 	fmt.Printf("Time (µs): %.3f\n", diffNanos / 1_000.0)
-	fmt.Printf("Time (ms): %.5f\n", diffNanos / 1_000_000.0)
-	fmt.Printf("Time (s):  %.5f\n", diffNanos / 1_000_000_000.0)
+	fmt.Printf("Time (ms): %.3f\n", diffNanos / 1_000_000.0)
+	fmt.Printf("Time (s):  %.4f\n", diffNanos / 1_000_000_000.0)
 }
 
 
