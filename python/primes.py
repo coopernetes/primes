@@ -4,7 +4,7 @@ import sys
 def main():
     primes = []
     largest_number = 1000
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 1 and len(sys.argv[1]) != 0:
         largest_number = int(sys.argv[1])
     i = 1
     while i <= largest_number:

@@ -11,7 +11,7 @@ import (
 func main() {
 	start := time.Now()
 	largestNumber := 1000
-	if len(os.Args) > 1 {
+	if len(os.Args) > 1 && len(os.Args[1]) != 0 {
 		a, err := strconv.Atoi(os.Args[1])
 		if err != nil {
 			log.Fatal(err)	

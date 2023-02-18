@@ -1,10 +1,18 @@
 use std::io;
 use std::io::Write;
 use std::time::Instant;
+use std::env;
 
 fn main() {
     let start = Instant::now();
-    let max: i32 = 1000;
+    let mut max: i32 = 1000;
+    let str_vars = env::args().collect::<Vec<String>>();
+    if str_vars.len() > 1 {
+        let arg = &str_vars[1];
+        if arg.len() != 0 {
+            max = arg.parse().unwrap();
+        }
+    }
     let mut i: i32 = 1;
     let mut primes = vec![];
     while i <= max {
@@ -20,9 +28,11 @@ fn main() {
             }
         }
         if prime {
-            primes.push(i)
+            primes.push(i);
+            out.push_str("yes\t\r");
+        } else {
+            out.push_str("no \t\r");
         }
-        out.push_str(format!("{}\t\r", prime).as_str());
         io::stdout().write(out.as_bytes()).unwrap();
         io::stdout().flush().unwrap();
         i += 1;

@@ -6,9 +6,9 @@ Calculate primes up to a maximum number in various languages.
 - [x] Go
 - [x] Java
 - [x] Rust
+- [x] JavaScript
 - [ ] C#
 - [ ] Kotlin
-- [ ] JavaScript
 - [ ] Clojure
 - [ ] Ruby
 - [ ] Scala

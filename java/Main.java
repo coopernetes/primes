@@ -9,7 +9,7 @@ public class Main {
         long start = System.nanoTime();
         ArrayList<Integer> primes = new ArrayList<Integer>();
         int largestNumber = 1000;
-        if (args.length > 0) {
+        if (args.length > 0 && !args[0].isEmpty()) {
             largestNumber = Integer.parseInt(args[0]);
         }
         for (int i = 1; i <= largestNumber; i++) {
