@@ -12,7 +12,7 @@ public class Main {
         if (args.length > 0) {
             largestNumber = Integer.parseInt(args[0]);
         }
-        for (int i = 1; i < largestNumber; i++) {
+        for (int i = 1; i <= largestNumber; i++) {
             System.out.print("Is " + i + " prime? ");
             if (isPrime(i, primes)) {
                 System.out.print("yes\r");
@@ -27,9 +27,9 @@ public class Main {
         long nanos = diff.toNanos();
         System.out.println("\nCount: " + primes.size());
         System.out.println("Time (ns): " + nanos);
-        System.out.println("Time (µs): " + nanos / 1_000.0);
-        System.out.println("Time (ms): " + nanos / 1_000_000.0);
-        System.out.println("Time (s):  " + nanos / 1_000_000_000.0);
+        System.out.println("Time (µs): " + String.format("%.3f", nanos / 1_000.0));
+        System.out.println("Time (ms): " + String.format("%.3f", nanos / 1_000_000.0));
+        System.out.println("Time (s):  " + String.format("%.4f", nanos / 1_000_000_000.0));
     }
 
     public static boolean isPrime(int i, ArrayList<Integer> primes) {

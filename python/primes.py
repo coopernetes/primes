@@ -7,7 +7,7 @@ def main():
     if len(sys.argv) > 1:
         largest_number = int(sys.argv[1])
     i = 1
-    while i < largest_number:
+    while i <= largest_number:
         print(f"Is {i} prime?\t", end='')
         if i == 1:
             print("yes", end='\r', flush=True)

@@ -7,7 +7,7 @@ fn main() {
     let max: i32 = 1000;
     let mut i: i32 = 1;
     let mut primes = vec![];
-    while i < max {
+    while i <= max {
         let mut out = format!("Is {} prime?\t", i);
         let mut prime = true;
         for x in &primes {
