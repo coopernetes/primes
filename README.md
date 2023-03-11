@@ -28,8 +28,6 @@ In no particular order:
 - [x] Java
 - [x] Rust
 - [x] JavaScript
-- [ ] C#
+- [x] C#
 - [ ] Kotlin
 - [ ] Clojure
-- [ ] Ruby
-- [ ] Scala

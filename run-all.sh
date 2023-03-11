@@ -27,3 +27,9 @@ echo ""
 echo " === Node ==="
 echo ""
 (cd js && node primes.js "${_arg}")
+
+echo ""
+echo " === C# ==="
+echo ""
+(cd csharp && dotnet run "${_arg}")
+
