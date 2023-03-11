@@ -9,10 +9,13 @@ def main():
     i = 1
     while i <= largest_number:
         print(f"Is {i} prime?\t", end='')
-        if i == 1:
-            print("yes", end='\r', flush=True)
-            primes.append(i)
-        elif [p for p in primes if i % p == 0] == [1]:
+        is_prime = True
+        for p in primes:
+            if p == 1 or p == i:
+                continue
+            if i % p == 0:
+                is_prime = False    
+        if is_prime:
             print("yes", end='\r', flush=True)
             primes.append(i)
         else:

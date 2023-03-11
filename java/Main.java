@@ -33,15 +33,14 @@ public class Main {
     }
 
     public static boolean isPrime(int i, ArrayList<Integer> primes) {
-        if ((i == 1) || (i == 2)) {
-            return true;
-        }
-        ArrayList<Integer> divs = new ArrayList<Integer>();
         for (int p : primes) {
+            if (p == 1 || p == i) {
+                continue;
+            }
             if (i % p == 0) {
-                divs.add(p);
+                return false;
             }
         }
-        return (divs.size() == 1 && divs.get(0) == 1);
+        return true;
     }
 }

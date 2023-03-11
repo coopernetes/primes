@@ -25,10 +25,10 @@ namespace HelloWorld
                     Console.Write("no\r");
                 }
             }
-            Console.WriteLine("\nLen: {0}", primes.Count);
             stopWatch.Stop();
             long nanos = stopWatch.ElapsedTicks * nanosecPerTick;
             var span = stopWatch.Elapsed;
+            Console.WriteLine("\nLen: {0}", primes.Count);
             Console.WriteLine("Time (ns): {0}", nanos);
             Console.WriteLine("Time (µs): {0}", nanos / 1000.0);
             Console.WriteLine("Time (ms): {0}", span.Milliseconds);

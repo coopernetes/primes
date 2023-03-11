@@ -18,8 +18,9 @@ func main() {
 		}
 		largestNumber = a
 	}
-	primes(largestNumber)
+	result := primes(largestNumber)
 	end := time.Now()
+	fmt.Printf("\nCount: %d\n", len(result))
 	diff := end.Sub(start)
 	diffNanos := float64(diff.Nanoseconds())
 	fmt.Printf("Time (ns): %d\n", diff.Nanoseconds())
@@ -29,35 +30,27 @@ func main() {
 }
 
 
-func primes(largestNumber int) {
-	primes := make([]int, 1)
+func primes(largestNumber int) []int {
+	primes := make([]int, 0)
 	i := 1
-	for {
+	for i <= largestNumber {
 		fmt.Printf("Is %d prime? ", i)
-		if i >= largestNumber {
-			break
+		isPrime := true
+		for _, p := range primes {
+			if (p == 1 || p == i) {
+				continue;
+			}
+			if (i % p == 0) {
+				isPrime = false;
+			}
 		}
-		if i == 1 {
-			fmt.Printf("yes\r")
-			primes[0] = i
-		} else if i == 2 || i == 3 {
+		if isPrime {
 			fmt.Printf("yes\r")
 			primes = append(primes, i)
 		} else {
-			divs := make([]int, 0)
-			for _, p := range primes {
-				if i % p == 0 {
-					divs = append(divs, p)
-				}
-			}
-			if len(divs) == 1 {
-				fmt.Printf("yes\r")
-				primes = append(primes, i)
-			} else {
-				fmt.Printf("no \r")
-			}
+			fmt.Printf("no \r")
 		}
 		i += 1
 	}
-	fmt.Printf("\nCount: %d\n", len(primes))
+	return primes
 }
