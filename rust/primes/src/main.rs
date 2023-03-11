@@ -16,7 +16,7 @@ fn main() {
     let mut i: i32 = 1;
     let mut primes = vec![];
     while i <= max {
-        let mut out = format!("Is {} prime?\t", i);
+        let mut out = format!("Is {} prime? ", i);
         let mut prime = true;
         for x in &primes {
             if *x == 1 || *x == i {
@@ -29,9 +29,9 @@ fn main() {
         }
         if prime {
             primes.push(i);
-            out.push_str("yes\t\r");
+            out.push_str("yes\r");
         } else {
-            out.push_str("no \t\r");
+            out.push_str("no \r");
         }
         io::stdout().write(out.as_bytes()).unwrap();
         io::stdout().flush().unwrap();
