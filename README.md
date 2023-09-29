@@ -31,3 +31,7 @@ In no particular order:
 - [x] C#
 - [ ] Kotlin
 - [ ] Clojure
+- [ ] C
+- [ ] C++
+- [ ] F#
+- [ ] OCaml

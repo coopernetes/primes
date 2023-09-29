@@ -1,4 +1,10 @@
-const start = Date.now();
+const { performance, PerformanceObserver } = require('perf_hooks')
+
+const perfObserver = new PerformanceObserver(() => {})
+
+perfObserver.observe({ entryTypes: ["measure"], buffer: true })
+performance.mark('start')
+
 let max = 1000;
 let primes = [];
 
@@ -8,6 +14,7 @@ if (process.argv.length > 2) {
         max = maybeInt
     }
 }
+
 
 for (let i = 1; i <= max; i++) {
     let out = `Is ${i} prime? `
@@ -33,6 +40,11 @@ for (let i = 1; i <= max; i++) {
 
 console.log(`\nCount: ${primes.length}`)
 
-const elapsed = Date.now() - start;
-console.log(`Time (ms): ${elapsed}`)
-console.log(`Time (s): ${elapsed / 1_000.0}`)
+performance.mark('end')
+const perfResult = performance.measure('runtime', 'start', 'end')
+
+
+console.log(`Time (ns): ${(perfResult.duration * 1_000_000.0).toFixed(0)}`)
+console.log(`Time (µs): ${(perfResult.duration * 1_000.0).toFixed(3)}`)
+console.log(`Time (ms): ${perfResult.duration.toFixed(3)}`)
+console.log(`Time (s):  ${(perfResult.duration / 1_000.0).toFixed(4)}`)
