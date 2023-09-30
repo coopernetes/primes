@@ -6,10 +6,10 @@ Each program will accept in an argument to change the maximum number to loop thr
 By default, each will check numbers from 1 to 1,000.
 
 The [`run-all.sh`](run-all.sh) script will run each program. To change the default
-maximum number, set the `MAX_NUMBER` variable.
+maximum number, pass in an integer as an argument
 
 ```shell
-MAX_NUMBER=5000 ./run-all.sh
+./run-all.sh [number]
 ```
 
 ## Why these languages?

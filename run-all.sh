@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 _arg=""
-if [ -n "${MAX_NUMBER}" ]; then
-    _arg=$MAX_NUMBER
+if [[ $# -eq 1 ]]; then
+    _arg=$1
+fi
+
+if ! [[ "$_arg" =~ ^[0-9]+$ ]]; then
+    echo "Error: argument must be an integer"
+    exit 1
 fi
 
 echo " === Python ==="
@@ -32,4 +37,3 @@ echo ""
 echo " === C# ==="
 echo ""
 (cd csharp && dotnet run "${_arg}")
-
