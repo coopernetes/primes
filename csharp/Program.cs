@@ -29,11 +29,10 @@ namespace HelloWorld
             long nanos = stopWatch.ElapsedTicks * nanosecPerTick;
             var span = stopWatch.Elapsed;
             Console.WriteLine("\nLen: {0}", primes.Count);
-            Console.WriteLine("Time (ns): {0}", nanos);
-            Console.WriteLine("Time (µs): {0}", nanos / 1000.0);
-            Console.WriteLine("Time (ms): {0}", span.Milliseconds);
-            Console.WriteLine("Time (s): {0}", span.Milliseconds / 1000.0);
-
+            Console.WriteLine("Time (ns): {0:0}", nanos);
+            Console.WriteLine("Time (µs): {0:0.000}", nanos / 1_000.0);
+            Console.WriteLine(String.Format("Time (ms): {0:0.000}", nanos / 1_000_000.0));
+            Console.WriteLine(String.Format("Time (s):  {0,5:0.00000}", nanos / 1_000_000_000.0));
         }
         static Boolean isPrime(int value, List<int> primes) {
             foreach (int p in primes)

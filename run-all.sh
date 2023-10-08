@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+set -ueo pipefail
 _arg=""
 if [[ $# -eq 1 ]]; then
     _arg=$1
+else
+    _arg=1000
 fi
 
 if ! [[ "$_arg" =~ ^[0-9]+$ ]]; then
