@@ -27,6 +27,16 @@ echo ""
 (cd java && javac Main.java && java Main "${_arg}")
 
 echo ""
+echo " === Java (GraalVM) ==="
+echo ""
+if [[ ! $(command -v native-image) && $(asdf current java) =~ graalvm ]]; then
+  _graalvm_version=$(asdf current java | sed 's/ \+/ /g' | tr -d '\n' | cut -d" " -f2)
+  ln -s "$HOME/.asdf/installs/java/${_graalvm_version}/bin/native-image" \
+    "$HOME/.asdf/shims/native-image"
+fi
+(cd java && javac Main.java && native-image Main && ./main) 
+
+echo ""
 echo " === Rust ==="
 echo ""
 (cd rust/primes && cargo build -q -r && ./target/release/primes "${_arg}")

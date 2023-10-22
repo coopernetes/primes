@@ -1,4 +1,6 @@
 out/
+main
+main.build_artifacts.txt
 
 # Compiled class file
 *.class

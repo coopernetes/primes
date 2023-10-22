@@ -2,6 +2,17 @@
 Calculate primes up to a maximum number in various languages.
 
 ## Usage
+Pre-requisite:
+- [asdf](https://asdf-vm.com/) with the following plugins added:
+    ```bash
+    asdf plugin add nodejs
+    asdf plugin add java
+    asdf plugin add rust
+    asdf plugin add python
+    asdf plugin add golang
+    asdf install
+    ```
+
 Each program will accept in an argument to change the maximum number to loop through. 
 By default, each will check numbers from 1 to 1,000.
 
